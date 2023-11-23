@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+		<div class="bg-dark collapse" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-8 py-4">
+						<h4 class="text-white">Acerca de</h4>
+						<p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem magni eaque voluptates, amet dolor vel nihil asperiores aliquam sit ullam cum inventore. Laudantium neque esse adipisci magnam, placeat fugit iusto?</p>
+					</div>
+					<div class="col-12 col-sm-4 py-4">
+						<h4 class="text-white">Contacto</h4>
+						<ul class="list-unstyled">
+							<li><a href="#" class="text-white">Siguenos en Twitter</a></li>
+							<li><a href="#" class="text-white">Like en Facebook</a></li>
+							<li><a href="#" class="text-white">Envianos un correo</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar navbar-dark bg-dark">
+			<div class="container">
+				<a href="index.html" class="navbar-brand d-flex align-items-center">
+					<strong>Reservaciones</strong>
+				</a>
+				<button 
+					class="navbar-toggler collapsed"
+					type="button" 
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarHeader"
+					aria-controls="navbarHeader"
+					aria-expanded="false"
+					aria-label="Alternar Navegacion"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+    <main>
+        <section class="py-5 bg-white text-center mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-4">Elija su mesa</h1>
+                        <p class="lead text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem perspiciatis impedit rem enim dolore aliquam modi, necessitatibus animi odit! Natus dolore eius eaque minima autem cupiditate dolores, tempore beatae suscipit.</p>
+                        <div class="contenedor-mesas row">
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-6 position-relative mesa">
+                                        <h5 class="text-success position-absolute top-50 start-50 translate-middle table-state">Disponible</h5>
+                                        <img src="./img/mesa.jpg" alt="Mesa Image" class="img-fluid table-img" data-bs-toggle="modal" data-bs-target="#modal-reservacion">
+                                    </div>
+                                    <div class="col-6 position-relative mesa">
+                                        <h5 class="text-success position-absolute top-50 start-50 translate-middle table-state">Disponible</h5>
+                                        <img src="./img/mesa.jpg" alt="Mesa Image" class="img-fluid table-img" data-bs-toggle="modal" data-bs-target="#modal-reservacion">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 position-relative mesa text-center d-flex justify-content-center mx-auto">
+                                        <h5 class="text-success position-absolute top-50 start-50 translate-middle table-state">Disponible</h5>
+                                        <img src="./img/mesa.jpg" alt="Mesa Image" class="img-fluid table-img" data-bs-toggle="modal" data-bs-target="#modal-reservacion">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 position-relative mesa">
+                                        <h5 class="text-success position-absolute top-50 start-50 translate-middle table-state">Disponible</h5>
+                                        <img src="./img/mesa.jpg" alt="Mesa Image" class="img-fluid table-img" data-bs-toggle="modal" data-bs-target="#modal-reservacion">
+                                    </div>
+                                    <div class="col-6 position-relative mesa">
+                                        <h5 class="text-success position-absolute top-50 start-50 translate-middle table-state">Disponible</h5>
+                                        <img src="./img/mesa.jpg" alt="Mesa Image" class="img-fluid table-img" data-bs-toggle="modal" data-bs-target="#modal-reservacion">
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col-12 gy-5">
+                                        <h3>¿Ya tiene una reservación?</h3>
+                                    </div>
+                                    <div class="col-6 gy-3">
+                                        <a href="#" class="boton btn btn-dark my-2">Editar Reservación</a>
+                                    </div>
+                                    <div class="col-6 gy-3">
+                                        <a href="#" class="boton btn btn-outline-danger my-2">Eliminar Reservacion</a>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <div class="modal fade" id="modal-reservacion" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="" id="modal-form" method="get">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title">Ingrese sus datos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="modal-name" class="form-label">Ingrese su nombre:</label>
+                        <input type="text" id="modal-name" class="form-control mb-3" placeholder="Nombre" form="modal-form">
+                        <label for="modal-lastName" class="form-label">Ingrese su apellido:</label>
+                        <input type="text" id="modal-lastName" class="form-control mb-3" placeholder="Apellido" form="modal-form">
+                        <label for="modal-number" class="form-label">Ingrese su número telefónico:</label>
+                        <input type="tel" id="modal-number" class="form-control mb-3" placeholder="Tel" form="modal-form">
+                        <label for="modal-card" class="form-label">Ingrese su tarjeta:</label>
+                        <input type="text" id="modal-card" class="form-control mb-1" placeholder="**** **** **** ****" pattern="[0-9]{16}" form="modal-form">
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container">
+                            <div class="row">
+                                <span class="text-muted col col-7">Al clickear aceptar usted acepta que se realice un cobro por el servicio de reservacion</span>
+                                <div class="col col-5 gx-5 d-flex justify-content-between py-3 px-3" >
+                                        <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-reservacion">Cerrar</button>
+                                        <button class="btn btn-dark" type="submit" data-bs-toggle="modal" data-bs-target="#modal-reservacion" form="modal-form">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="reservacionScript.js"></script>
+</body>
+</html>

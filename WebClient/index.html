@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+		<div class="bg-dark collapse" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-8 py-4">
+						<h4 class="text-white">Acerca de</h4>
+						<p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem magni eaque voluptates, amet dolor vel nihil asperiores aliquam sit ullam cum inventore. Laudantium neque esse adipisci magnam, placeat fugit iusto?</p>
+					</div>
+					<div class="col-12 col-sm-4 py-4">
+						<h4 class="text-white">Contacto</h4>
+						<ul class="list-unstyled">
+							<li><a href="#" class="text-white">Siguenos en Twitter</a></li>
+							<li><a href="#" class="text-white">Like en Facebook</a></li>
+							<li><a href="#" class="text-white">Envianos un correo</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar navbar-dark bg-dark">
+			<div class="container">
+				<a href="index.html" class="navbar-brand d-flex align-items-center">
+					<strong>Reservaciones</strong>
+				</a>
+				<button 
+					class="navbar-toggler collapsed"
+					type="button" 
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarHeader"
+					aria-controls="navbarHeader"
+					aria-expanded="false"
+					aria-label="Alternar Navegacion"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+    <main>
+        <section class="py-5 bg-white text-center mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-4">Seleccione su día a reservar</h1>
+                        <p class="lead text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem perspiciatis impedit rem enim dolore aliquam modi, necessitatibus animi odit! Natus dolore eius eaque minima autem cupiditate dolores, tempore beatae suscipit.</p>
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Sun</th>
+                                            <th scope="col">Mon</th>
+                                            <th scope="col">Tue</th>
+                                            <th scope="col">Wed</th>
+                                            <th scope="col">Thu</th>
+                                            <th scope="col">Fri</th>
+                                            <th scope="col">Sat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="calendar-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="scriptCalendar.js"></script>
+</body>
+</html>
