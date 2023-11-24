@@ -1,8 +1,19 @@
 import datetime
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from modules import reservaciones
+
+
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get('/RevisarMesas/{date}')
 async def RevisarMesas(date: str = "" ):
