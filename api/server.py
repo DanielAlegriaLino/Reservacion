@@ -12,3 +12,6 @@ async def RevisarMesas(date: str = "" ):
 async def EliminarReservacion(hash: str):
     return reservaciones.BorrarReservacion(hash)
 
+@app.get('/')
+async def Root():
+    return "UwU"
