@@ -8,3 +8,7 @@ app = FastAPI()
 async def RevisarMesas(date: str = "" ):
     return reservaciones.RevisarMesas(date)
 
+@app.delete("/BorrarReservacion/{hash}")
+async def EliminarReservacion(hash: str):
+    return reservaciones.BorrarReservacion(hash)
+
