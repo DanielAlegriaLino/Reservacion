@@ -1,4 +1,6 @@
 import datetime
+import time
+import asyncio
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -15,13 +17,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get('/RevisarMesas/{date}')
+@app.get('/RevisarMesas/{date}', tags=['RevisarMesas'])
 async def RevisarMesas(date: str = "" ):
     return reservaciones.RevisarMesas(date)
 
 @app.delete("/BorrarReservacion/{hash}")
 async def EliminarReservacion(hash: str):
     return reservaciones.BorrarReservacion(hash)
+
+@app.post("/GenerarReservacion/{date}")
+async def GenerarReservacion(date:str):
+    id_created = reservaciones.GenerarReservacion(date)
+    asyncio.create_task(EliminarReservacion(id_created))
+    return id_created
+    
+async def EliminarReservacion(id_actual: int):
+    await asyncio.sleep(120)
+    reservaciones.BorrarReservacionTemporal(id_actual)
+    
 
 @app.get('/')
 async def Root():

@@ -21,13 +21,22 @@ def EstablecerReservacion(fecha, mesa, id_reservacion_proceso):
         delete = client.table('ReservacionesEnProceso').delete().eq('id', id_reservacion_proceso).execute()
         response = client.table('ReservacionesRealizadas').insert({"fecha": fecha, "mesa": mesa, "hash": 'gawefawawf'}).execute() ####### El hash generado no es real
 
-def BorrarReservacion(hash):
+def BorrarReservacionEstablecida(hash):
     response = client.table('ReservacionesRealizadas').select('hash').eq('hash', hash).execute()
     print(response)
     if response.data == []:
         return False
     else:
         delete = client.table('ReservacionesRealizadas').delete().eq('hash', hash).execute()
+        return True
+
+def BorrarReservacionTemporal(id):
+    response = client.table('ReservacionesEnProceso').select('id').eq('id', id).execute()
+    print(response.data)
+    if response.data == []:
+        return False
+    else:
+        delete = client.table('ReservacionesEnProceso').delete().eq('id', id).execute()
         return True
 
 def RevisarMesas(fecha):
