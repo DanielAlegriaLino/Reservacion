@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+    buildCalendar();
+});
+
+
+function buildCalendar(){
     const calendarBody = document.getElementById("calendar-body");
 
     const maxDays = 31;
@@ -16,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 button.textContent = dayNumber;
 
                 button.addEventListener("click", function() {
+                    localStorage.setItem('date', button.textContent)
                     window.location.href = "reservacion.html";
                 });
 
@@ -29,4 +35,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
         calendarBody.appendChild(tr);
     }
-});
+}
