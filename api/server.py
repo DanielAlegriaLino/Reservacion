@@ -32,9 +32,13 @@ async def GenerarReservacion(date:str):
     return id_created
     
 async def EliminarReservacion(id_actual: int):
-    await asyncio.sleep(120)
+    await asyncio.sleep(30)
     reservaciones.BorrarReservacionTemporal(id_actual)
     
+@app.get("/EstablecerReservacion/{date}/{id_temporal}/{mesa}")
+async def EstablecerReservacion(date:str, id_temporal:int, mesa:int):
+    print("Resedvacion")
+    return reservaciones.EstablecerReservacion(date,mesa,id_temporal)
 
 @app.get('/')
 async def Root():

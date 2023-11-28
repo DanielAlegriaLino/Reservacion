@@ -16,11 +16,12 @@ def GenerarReservacion(fecha): #Necesita Recibir la fecha en formato de string/J
 def EstablecerReservacion(fecha, mesa, id_reservacion_proceso):
     response = client.table('ReservacionesEnProceso').select('id').eq('id', id_reservacion_proceso).execute()
     if response.data == []:
-        return response
+        return "False"
     else:
         delete = client.table('ReservacionesEnProceso').delete().eq('id', id_reservacion_proceso).execute()
         response = client.table('ReservacionesRealizadas').insert({"fecha": fecha, "mesa": mesa, "hash": 'gawefawawf'}).execute() ####### El hash generado no es real
-
+        return "True"
+    
 def BorrarReservacionEstablecida(hash):
     response = client.table('ReservacionesRealizadas').select('hash').eq('hash', hash).execute()
     print(response)
@@ -40,23 +41,23 @@ def BorrarReservacionTemporal(id):
         return True
 
 def RevisarMesas(fecha):
-    Reserv = [1, 2, 3, 4, 5]
     cont = 0
     response = client.table('ReservacionesRealizadas').select('mesa').eq('fecha', fecha).execute()
+    usage = client.table('ReservacionesEnProceso').select('id').eq('fecha', fecha).execute()
+    print(usage)
+    if(usage.data):return [True]*5
     
+    res= [False]*5
     if(response.data == []): 
-        return [False]*5
+        return res
+    print(response.data)
+    for i in range(len(response.data)):
+        index = response.data[i]['mesa']
+        res[index]=True
         
-    for i in range(len(Reserv)):
-        if Reserv[i] == response.data[cont]['mesa']:
-            Reserv[i] = True
-            cont+= 1
-            if cont == len(response.data):
-                cont = 0
-        else:
-            Reserv[i] = False
         
-    return Reserv
+        
+    return res
             
 def getReservas():
     response = client.table('ReservacionesRealizadas').select('fecha').execute()
